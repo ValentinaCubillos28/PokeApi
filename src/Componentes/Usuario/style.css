@@ -1,0 +1,117 @@
+/* General */
+.c-usuario {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.c-titulo, .c-subtitulo {
+  text-align: center;
+  color: #3b3b3b;
+}
+
+.c-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.c-formulario label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #333;
+}
+
+.c-formulario input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #f5eded;
+  margin-top: 4px;
+}
+
+.c-boton {
+  background-color: #9691f7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.c-boton:hover {
+  background-color: #635cca;
+}
+
+.c-boton-pequeño {
+  background-color: #7972f5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.c-agregar {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.c-agregar input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #b6bbf1;
+  flex: 1;
+}
+
+.c-imagenes {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.c-imagen-item {
+  text-align: center;
+}
+
+.c-imagen-item img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(121, 114, 245, 0.45);
+}
+
+.c-cargando {
+  text-align: center;
+  font-size: 18px;
+  color: #777;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .c-usuario {
+    padding: 15px;
+  }
+
+  .c-boton {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .c-boton-pequeño {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+}

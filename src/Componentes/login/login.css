@@ -1,0 +1,103 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background: #fff;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+.login-container .login-box {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(96, 99, 246, 0.64);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.login-container .login-box h2 {
+  margin-bottom: 20px;
+  color: #4e4e4e;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.login-container .login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container .login-box input {
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid #704eeb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+  box-sizing: border-box;
+}
+
+.login-container .login-box input:focus {
+  border-color: #675ff2;
+  outline: none;
+}
+
+.login-container .login-box button {
+  padding: 12px 14px;
+  margin-top: 15px;
+  background-color: #675ff2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.login-container .login-box button:hover {
+  background-color: #5a52c6;
+}
+
+.login-container .login-box p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.login-container .login-box .registro-btn {
+  margin-top: 10px;
+  background-color: #675ff2;
+}
+
+.login-container .login-box .registro-btn:hover {
+  background-color: #5a52c6;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 15px;
+  }
+  
+  .login-container .login-box {
+    padding: 20px 25px;
+    max-width: 100%;
+  }
+  
+  .login-container .login-box h2 {
+    font-size: 1.5rem;
+  }
+  
+  .login-container .login-box input,
+  .login-container .login-box button,
+  .login-container .login-box .registro-btn {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}

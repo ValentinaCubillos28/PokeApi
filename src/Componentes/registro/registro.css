@@ -1,0 +1,114 @@
+.registro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background-color: #fff; 
+  padding: 80px 20px;     
+  box-sizing: border-box;
+}
+
+.registro-container h2 {
+  color: #4e4e4e;
+  text-align: center;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.registro-container form {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(68, 54, 254, 0.426);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.registro-container form input {
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid #6442ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+  box-sizing: border-box;
+}
+
+.registro-container form input:focus {
+  border-color: #675ff2;
+  outline: none;
+}
+
+.registro-container form button {
+  margin-top: 20px;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #675ff2;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.registro-container form button:hover {
+  background-color: #5a52c6;
+}
+
+.registro-container > p.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.registro-container > button {
+  margin-top: 25px;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #675ff2;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+}
+
+.registro-container > button:hover {
+  background-color: #5a52c6;
+}
+
+/* Media queries para pantallas más pequeñas */
+
+@media (max-width: 480px) {
+  .registro-container {
+    padding: 30px 15px;
+  }
+  
+  .registro-container h2,
+  .registro-container h4 {
+    font-size: 1.5rem;
+  }
+  
+  .registro-container form {
+    padding: 20px 25px;
+    max-width: 100%;
+  }
+
+  .registro-container form input,
+  .registro-container form button,
+  .registro-container > button {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}

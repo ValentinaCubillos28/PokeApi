@@ -1,0 +1,86 @@
+.aleatorio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(121, 114, 245, 0.25);
+}
+
+/* Cards individuales */
+.c-lista-pokemon.c-un_aleatorio {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(121, 114, 245, 0.45);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 120px;
+}
+
+.c-lista-pokemon.c-un_aleatorio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgb(110, 117, 249);
+}
+
+.c-lista-pokemon.c-un_aleatorio p {
+  margin: 5px 0;
+  font-weight: 500;
+  color: #333;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.c-lista-pokemon.c-un_aleatorio img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Botón Generar pequeño al lado */
+.boton-pequeño {
+  background-color: #7972f5;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(121, 114, 245, 0.5);
+  height: fit-content;
+  align-self: center;
+}
+
+.boton-pequeño:hover {
+  background-color: #5a52c6;
+  box-shadow: 0 6px 12px rgba(90, 82, 198, 0.7);
+}
+
+@media (max-width: 600px) {
+  .aleatorio {
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .c-lista-pokemon.c-un_aleatorio {
+    width: 100px;
+  }
+
+  .c-lista-pokemon.c-un_aleatorio img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .boton-pequeño {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}

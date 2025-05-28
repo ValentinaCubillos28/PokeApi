@@ -1,47 +1,49 @@
-import { useState, useEffect } from 'react'
-import { supabase } from '../../supabase'
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { supabase } from '../../supabase';
+import { useNavigate } from 'react-router-dom';
+import './login.css';
 
 function Login() {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    });
+    if (error) alert('Usuario o contraseña no válido');
+    else navigate('/');
+  };
 
-    const handleLogin = async (e) => {
-        e.preventDefault()
-        const { data, error } = await supabase.auth.signInWithPassword({
-            email,
-            password
-        })
-        if (error) alert("usuario o contraseña no valido")
-        else {
-            navigate("/")
-        }
-    }
-
-    return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Contraseña"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">Iniciar sesión</button>
-            </form>
-            <h2>No tiene cuenta</h2>
-            <button onClick={() => navigate(`/registro`)}>Registrarse</button>
-        </div>
-    )
+  return (
+    <div className="login-container">
+      <div className="login-box">
+        <h2>Iniciar sesión</h2>
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Correo electrónico"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Entrar</button>
+        </form>
+        <p>¿No tienes cuenta?</p>
+        <button className="registro-btn" onClick={() => navigate('/registro')}>
+          Registrarse
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default Login
+export default Login;

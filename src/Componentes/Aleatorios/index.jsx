@@ -1,23 +1,20 @@
-
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from '../../contexto/contexto';
+import './style.css'
 
 function Aleatorios() {
   const { data, listaCapturados ,setListaCapturados, setTipoSeleccionado } = useContext(AppContext);
-  const [aleatorio, setAleatorio] = useState([])
-  
-  setTipoSeleccionado("All")
+  const [aleatorio, setAleatorio] = useState([]);
+
+  setTipoSeleccionado("All");
+
   useEffect(() => {
     if (data.length > 0) {
       generar();
     }
   }, [data]);
-/*
-  useEffect(() => {
-    console.log("Actualizado:", listaCapturados);
-  }, [listaCapturados]);
-*/
+
   const navigate = useNavigate();
 
   const generar = () => {
@@ -29,16 +26,19 @@ function Aleatorios() {
     }
     setAleatorio(nuevosAleatorios);
 
-    const nuevosIds = nuevosAleatorios.map(nuevoAleatorio => nuevoAleatorio.url.split("/")[6]).filter(id => !listaCapturados.includes(id));
+    const nuevosIds = nuevosAleatorios
+      .map(nuevoAleatorio => nuevoAleatorio.url.split("/")[6])
+      .filter(id => !listaCapturados.includes(id));
     setListaCapturados(prev => [...prev, ...nuevosIds]);
   };
 
   return (
     <section className="c-aleatorio c-lista">
       {aleatorio.map((pokemon ,index) => (
-        <div className="c-lista-pokemon c-un_aleatorio" 
-        key={index}
-        onClick={() => navigate(`/Pokemon/${pokemon.name}`)}
+        <div
+          className="c-lista-pokemon c-un_aleatorio"
+          key={index}
+          onClick={() => navigate(`/Pokemon/${pokemon.name}`)}
         >
           <p>{pokemon.url.split("/")[6]}</p>
           <img
@@ -50,7 +50,7 @@ function Aleatorios() {
           <p>{pokemon.name}</p>
         </div>
       ))}
-      <button onClick={generar}>Generar</button>
+      <button className="boton-pequeño" onClick={generar}>Generar</button>
     </section>
   );
 }

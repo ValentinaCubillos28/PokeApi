@@ -1,0 +1,96 @@
+
+
+body {
+  background-color: #f8f8f8;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Buscador */
+.c-buscador {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px 15px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 12px rgba(121, 114, 245, 0.64);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.c-buscador:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Lista de Pokémon */
+.c-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card de cada Pokémon */
+.c-lista-pokemon {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(121, 114, 245, 0.689);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.c-lista-pokemon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(70, 44, 242, 0.667);
+}
+
+.c-lista-pokemon p {
+  margin: 5px 0;
+  font-weight: 500;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.c-lista-pokemon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Filtro (puedes ajustar según tu Filtro.jsx) */
+.filtro-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filtro-container select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .c-buscador {
+    width: 95%;
+  }
+
+  .c-lista {
+    gap: 15px;
+  }
+
+  .c-lista-pokemon img {
+    width: 80px;
+    height: 80px;
+  }
+}

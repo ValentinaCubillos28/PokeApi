@@ -1,0 +1,39 @@
+.c-filtro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.c-filtro button {
+  background-color: #caccfb;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.c-filtro button:hover {
+  background-color: #8361f6;
+  color: #000;
+}
+
+.c-filtro button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+  .c-filtro {
+    gap: 8px;
+  }
+
+  .c-filtro button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}

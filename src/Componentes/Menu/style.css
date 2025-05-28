@@ -1,13 +1,49 @@
-.c-menu{
-    background-color: silver;
-    flex-wrap: wrap;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-    padding: 15px;
+.c-menu {
+  background-color: #caccfb;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px 8px;
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  flex-wrap: wrap; /* Permite que se acomoden en varias líneas si no hay espacio */
+}
+
+.c-menu a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 6px;
+}
+
+.c-menu a:hover {
+  background-color: #caccfb;
+  color: #333;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 600px) {
+  .c-menu {
+    gap: 12px;
+    font-size: 0.9rem;
+    padding: 10px 5px;
+  }
+
+  .c-menu a {
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .c-menu {
+    gap: 8px;
+    font-size: 0.85rem;
+  }
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabase";
+import './style.css'; // Importa los estilos
 
 export default function Usuario() {
   const [usuario, setUsuario] = useState(null);
@@ -12,6 +13,7 @@ export default function Usuario() {
   });
   const [nuevaUrl, setNuevaUrl] = useState("");
   const [imagenes, setImagenes] = useState([]);
+
   // Obtener datos del usuario
   useEffect(() => {
     async function fetchUsuario() {
@@ -31,6 +33,7 @@ export default function Usuario() {
     }
     fetchUsuario();
   }, []);
+
   const fetchImagenes = async (usuarioid) => {
     const { data, error } = await supabase
       .from("multimedia")
@@ -38,9 +41,11 @@ export default function Usuario() {
       .eq("usuarioid", usuarioid);
     if (data) setImagenes(data);
   };
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+
   const handleUpdate = async () => {
     const { error } = await supabase
       .from("usuario")
@@ -49,6 +54,7 @@ export default function Usuario() {
     if (error) alert("Error al actualizar");
     else alert("Datos actualizados");
   };
+
   const handleAgregarUrl = async () => {
     if (!nuevaUrl.trim()) return;
     const { error } = await supabase
@@ -61,6 +67,7 @@ export default function Usuario() {
       fetchImagenes(usuario.id);
     }
   };
+
   const handleEliminarImagen = async (id) => {
     const { error } = await supabase
       .from("multimedia")
@@ -70,58 +77,66 @@ export default function Usuario() {
       setImagenes(imagenes.filter((img) => img.id !== id));
     }
   };
-  //cerrar sesion
+
   const handleLogout = async () => {
-    await supabase.auth.signOut()
-    setUser(null)
-    setTareas([])
-  }
-  if (!usuario) return <p>Cargando...</p>;
+    await supabase.auth.signOut();
+    setUsuario(null);
+  };
+
+  if (!usuario) return <p className="c-cargando">Cargando...</p>;
+
   return (
-    <div>
-      <h2>Perfil de Usuario</h2>
-      <label>Nombre:
-        <input name="nombre" value={form.nombre} onChange={handleChange} />
-      </label><br />
-      <label>Correo:
-        <input name="correo" value={form.correo} onChange={handleChange} />
-      </label><br />
-      <label>Fecha de nacimiento:
-        <input type="date" name="fecha_nacimiento"
-          value={form.fecha_nacimiento} onChange={handleChange} />
-      </label><br />
-      <label>Teléfono:
-        <input name="telefono" value={form.telefono} onChange={handleChange}
-        />
-      </label><br />
-      <label>Rol:
-        <input name="roll" value={form.roll} onChange={handleChange} />
-      </label><br />
-      <button onClick={handleUpdate}>Guardar cambios</button>
+    <div className="c-usuario">
+      <h2 className="c-titulo">Perfil de Usuario</h2>
+
+      <div className="c-formulario">
+        <label>Nombre:
+          <input name="nombre" value={form.nombre} onChange={handleChange} />
+        </label>
+
+        <label>Correo:
+          <input name="correo" value={form.correo} onChange={handleChange} />
+        </label>
+
+        <label>Fecha de nacimiento:
+          <input type="date" name="fecha_nacimiento" value={form.fecha_nacimiento} onChange={handleChange} />
+        </label>
+
+        <label>Teléfono:
+          <input name="telefono" value={form.telefono} onChange={handleChange} />
+        </label>
+
+        <label>Rol:
+          <input name="roll" value={form.roll} onChange={handleChange} />
+        </label>
+
+        <button className="c-boton" onClick={handleUpdate}>Guardar cambios</button>
+      </div>
+
       <hr />
-      <h3>Agregar imagen</h3>
-      <input
-        type="text"
-        placeholder="URL de la imagen"
-        value={nuevaUrl}
-        onChange={(e) => setNuevaUrl(e.target.value)}
-      />
-      <button onClick={handleAgregarUrl}>Agregar</button>
-      <h3>Imágenes guardadas</h3>
-      <ul>
+
+      <h3 className="c-subtitulo">Agregar imagen</h3>
+      <div className="c-agregar">
+        <input type="text" placeholder="URL de la imagen" value={nuevaUrl} onChange={(e) => setNuevaUrl(e.target.value)} />
+        <button className="c-boton" onClick={handleAgregarUrl}>Agregar</button>
+      </div>
+
+      <h3 className="c-subtitulo">Imágenes guardadas</h3>
+      <ul className="c-imagenes">
         {imagenes.map((img) => (
-          <li key={img.id}>
-            <img src={img.url} alt="Imagen" width="150" />
-            <br />
-            <button onClick={() =>
-              handleEliminarImagen(img.id)}>Eliminar</button>
+          <li key={img.id} className="c-imagen-item">
+            <img src={img.url} alt="Imagen" />
+            <button className="c-boton-pequeño" onClick={() => handleEliminarImagen(img.id)}>Eliminar</button>
           </li>
         ))}
       </ul>
+
       <hr />
-      <h2>Quiero cerrar sesión</h2>
-      <button onClick={handleLogout}>Cerrar sesión</button>
-      {/* saltos de linea para que el menu no tape el boton */}
+
+      <h2 className="c-subtitulo">Cerrar sesión</h2>
+      <button className="c-boton" onClick={handleLogout}>Cerrar sesión</button>
+
+      {/* espacio para que el menú no tape */}
       <br /><br /><br /><br /><br />
     </div>
   );
