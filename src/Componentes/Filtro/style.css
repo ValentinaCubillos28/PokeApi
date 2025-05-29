@@ -2,20 +2,31 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   margin: 20px 0;
 }
 
 .c-filtro button {
   background-color: #caccfb;
   border: none;
-  border-radius: 20px;
-  padding: 8px 14px;
-  font-size: 0.9rem;
+  border-radius: 16px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
   color: #333;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: capitalize;
+  height: 24px;
+  line-height: 16px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 120px;
+  flex-basis: 90px;
+  box-sizing: border-box;
 }
 
 .c-filtro button:hover {
@@ -33,7 +44,11 @@
   }
 
   .c-filtro button {
-    padding: 6px 10px;
-    font-size: 0.8rem;
+    padding: 4px 8px;
+    font-size: 0.8rem; 
+    height: 22px;
+    line-height: 14px;
+    max-width: 100px;
+    flex-basis: 80px;
   }
 }

@@ -23,7 +23,7 @@
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(68, 54, 254, 0.426);
   width: 100%;
-  max-width: 400px;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -80,7 +80,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   font-size: 1rem;
 }
 

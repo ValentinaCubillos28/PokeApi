@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../supabase";
-import './style.css'; // Importa los estilos
+import './style.css';
 
 export default function Usuario() {
   const [usuario, setUsuario] = useState(null);

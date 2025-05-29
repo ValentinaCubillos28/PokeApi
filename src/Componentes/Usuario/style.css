@@ -1,84 +1,131 @@
-/* General */
 .c-usuario {
-  max-width: 600px;
+  max-width: 380px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem 2.5rem;
   font-family: 'Poppins', sans-serif;
+  background-color: #f5f9ff; /* azul muy muy claro */
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 18px rgba(121, 114, 245, 0.15);
+  color: #1f2937; /* texto gris oscuro */
 }
 
 .c-titulo, .c-subtitulo {
   text-align: center;
-  color: #3b3b3b;
+  color: #1f2937; /* gris oscuro */
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.c-subtitulo {
+  font-size: 0.95rem;
+  color: #4b5563; /* gris medio */
+  margin-top: 0;
 }
 
 .c-formulario {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin: 20px 0;
+  gap: 1rem;
+  margin: 1.5rem 0;
 }
 
 .c-formulario label {
   display: flex;
   flex-direction: column;
-  font-size: 14px;
-  color: #333;
+  font-size: 0.9rem;
+  color: #374151; /* gris oscuro */
+  font-weight: 500;
 }
 
 .c-formulario input {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #f5eded;
-  margin-top: 4px;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 2px solid #a5b4fc; /* borde azul claro */
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #ffffff;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.c-formulario input:focus {
+  outline: none;
+  border-color: #6366f1; /* azul más intenso */
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
 }
 
 .c-boton {
   background-color: #9691f7;
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
   cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 6px 12px rgba(121, 114, 245, 0.4);
+  transition: background-color 0.3s ease, transform 0.15s ease;
 }
 
 .c-boton:hover {
   background-color: #635cca;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(99, 92, 202, 0.6);
+}
+
+.c-boton:active {
+  transform: scale(0.95);
 }
 
 .c-boton-pequeño {
   background-color: #7972f5;
   color: white;
   border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
-  font-size: 12px;
+  border-radius: 0.6rem;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
+  box-shadow: 0 3px 8px rgba(121, 114, 245, 0.45);
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.c-boton-pequeño:hover {
+  background-color: #5a54d9;
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(90, 84, 217, 0.6);
 }
 
 .c-agregar {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .c-agregar input {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #b6bbf1;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 2px solid #a5b4fc;
   flex: 1;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #fff;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.c-agregar input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
 }
 
 .c-imagenes {
   list-style: none;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 14px;
 }
 
 .c-imagen-item {
@@ -88,30 +135,45 @@
 .c-imagen-item img {
   width: 100%;
   max-width: 150px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(121, 114, 245, 0.45);
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 18px rgba(121, 114, 245, 0.45);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.c-imagen-item img:hover {
+  transform: scale(1.05);
 }
 
 .c-cargando {
   text-align: center;
   font-size: 18px;
-  color: #777;
-  margin-top: 40px;
+  color: #6b7280; /* gris medio */
+  margin-top: 3rem;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .c-usuario {
-    padding: 15px;
+    padding: 1.5rem 1.75rem;
   }
 
   .c-boton {
-    padding: 8px 14px;
-    font-size: 14px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
   }
 
   .c-boton-pequeño {
-    font-size: 10px;
-    padding: 5px 10px;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .c-agregar {
+    gap: 10px;
+  }
+
+  .c-imagenes {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 10px;
   }
 }

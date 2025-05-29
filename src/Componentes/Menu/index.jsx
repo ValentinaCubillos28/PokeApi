@@ -11,7 +11,7 @@ function Menu() {
           <Link to="/aleatorios">Aleatorio</Link>
           <Link to="/capturados">Capturados</Link>
           <Link to="/usuarios">Usuario</Link>
-
+          <Link to="/Administrador">Admin</Link>
         </nav>
     )
 }

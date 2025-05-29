@@ -1,0 +1,177 @@
+:root {
+  --color-principal: #93c5fd; /* Azul MUY claro */
+  --color-hover: #60a5fa; /* Azul claro */
+  --color-borde: #60a5fa; /* Borde azul claro */
+  --color-texto: #1f2937; /* Texto gris oscuro */
+  --color-titulo: #000000; /* Título negro */
+  --color-fondo: #f0f9ffae; /* Fondo azul MUY claro */
+  --color-tarjeta: #ffffff; /* Fondo blanco */
+}
+
+.admin-container {
+  padding: 1rem 3rem; /* Más espacio a los lados */
+  background-color: var(--color-fondo);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-texto);
+}
+
+.admin-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-titulo);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-tarjeta);
+  border: 2px solid var(--color-borde);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+  text-align: left;
+  padding: 0.75rem 1rem; /* Más padding lateral */
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background-color: #e0f2fe; /* Azul más claro */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-texto);
+}
+
+tr:hover {
+  background-color: #dbeafe; /* Azul muy claro */
+  transition: background-color 0.2s ease;
+}
+
+/* Inputs */
+td input[type="text"],
+td input[type="tel"],
+td input[type="email"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid var(--color-borde);
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-texto);
+  background-color: #f9fafb;
+}
+
+td input:focus {
+  outline: none;
+  border-color: var(--color-hover);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.3);
+}
+
+/* Botones */
+button {
+  background-color: var(--color-principal);
+  color: var(--color-texto);
+  border: 2px solid var(--color-borde);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: var(--color-hover);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:disabled {
+  background-color: #dbeafe;
+  border-color: #dbeafe;
+  cursor: not-allowed;
+}
+
+/* Fotos */
+td div {
+  text-align: center;
+}
+
+td img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-borde);
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 1rem 1.5rem; /* Reducir espacio lateral en móviles pero mantener */
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    background-color: var(--color-tarjeta);
+    border: 2px solid var(--color-borde);
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem; /* Más espacio abajo */
+    padding: 1rem 1rem 1.5rem 1rem; /* Más espacio interno */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  td {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: none;
+    font-size: 0.95rem;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: var(--color-borde);
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  td input[type="text"],
+  td input[type="tel"],
+  td input[type="email"] {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 1rem;
+  }
+
+  td img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-top: 0.5rem;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}

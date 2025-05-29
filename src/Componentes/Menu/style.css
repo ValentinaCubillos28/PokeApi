@@ -11,7 +11,7 @@
   z-index: 1000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
-  flex-wrap: wrap; /* Permite que se acomoden en varias líneas si no hay espacio */
+  flex-wrap: wrap; 
 }
 
 .c-menu a {
@@ -29,11 +29,11 @@
 }
 
 /* Responsive para pantallas pequeñas */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .c-menu {
     gap: 12px;
     font-size: 0.9rem;
-    padding: 10px 5px;
+    padding: 6px 4px;
   }
 
   .c-menu a {
